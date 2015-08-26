@@ -1,5 +1,5 @@
 # [dekomoriAtom](https://github.com/alepcat1710/dekomoriAtom)
-New on ubuntu? Lets install some basic software !
+New on ubuntu? Let install some basic software with a single script!
 
 License
 -------
