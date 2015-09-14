@@ -2,6 +2,7 @@
 # https://facebook.com/Tester2009
 # https://github.com/alepcat1710
 # Date: August 26, 2015
+# Updated: September 14, 2015. 1.0v
 # Tested on: Ubuntu 14.04 LTS
 # Feel free to use. Do not change copyright, mastah !
 
@@ -24,14 +25,14 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 '
+dkmrVer="dekomoriAtom 1.0v"
 clear &&
-echo "	dekomoriAtom 0.1 Copyright (c) 2015 Muhammad Aliff Muazzam August 26, 2015"
+echo "	$dkmrVer Copyright (c) 2015 Muhammad Aliff Muazzam August 26, 2015"
 echo "	First on ubuntu? Let me install basic software!"
 echo "	Written by @Tester2009"
 echo "	Make my life easier !"
 
-echo "	Before proceed. Please makesure you have a STABLE INTERNET CONNECTION! PROCEED ? [Y/n]"
-read confirm
+read -p "	Before proceed. Please makesure you have a STABLE INTERNET CONNECTION! PROCEED ? [Y/n] " confirm
 if [ "$confirm" = "y" ]
 then
 
@@ -45,8 +46,7 @@ sudo apt-get install -f &&
 sudo apt-get dist-upgrade &&
 echo "	Done update! Now proceed to installing.."
 
-echo "	Install ubuntu restricted extras? (You can play restricted formats using Totem and Rythmbox) [Y/n]"
-read restricted_prompt
+read -p "	Install ubuntu restricted extras? (You can play restricted formats using Totem and Rythmbox) [Y/n] " restricted_prompt
 if [ "$restricted_prompt" = "y" ]
 then
 	sudo apt-get install ubuntu-restricted-extras
@@ -61,12 +61,26 @@ echo "	Installing GIMP" &&
 sudo apt-get install gimp &&
 echo "	GIMP installed!"
 
-echo "	Do you want to install Aircrack-ng? [Y/n]"
-read aircrack_prompt
+echo "	Installing whois" && # updated August 29, 2015
+sudo apt-get install whois &&
+echo "	whois installed!"
+
+echo "	Installing gparted" && #updated August 29, 2015
+sudo apt-get install gparted &&
+echo "	gparted installed!"
+
+read -p "	Do you want to install Aircrack-ng? [Y/n] " aircrack_prompt
 if [ "$aircrack_prompt" = "y" ]
 then
 	sudo apt-get install aircrack-ng
 	echo "	Aircrack-ng installed!"
+fi
+
+read -p "	Do you want to install Nmap? [Y/n] " nmap_prompt
+if [ "$nmap_prompt" = "y" ]
+then
+	sudo apt-get install nmap
+	echo "	Nmap installed!"
 fi
 
 echo "	Last thing..."
@@ -75,8 +89,8 @@ sudo apt-get -f install &&
 sudo apt-get autoremove &&
 sudo apt-get -y autoclean &&
 sudo apt-get -y clean
-echo "	dekomoriAtom completed!"
+echo "	$dkmrVer completed!"
 
 # if user dont want to continue
-else echo "You can try dekomoriAtom next time :')"
+else echo "You can try $dkmrVer next time :')"
 fi
