@@ -83,6 +83,13 @@ then
 	echo "	Nmap installed!"
 fi
 
+read -p "	Rename bluetooth? (Please makesure your bluetooth is enabled!) [Y/n] " bluetooth_prompt
+if [ "$bluetooth_prompt" = "y" ]; then
+	read -p "	Name ? " nameB
+	sudo hciconfig hci0 name $nameB
+	echo "	Bluetooth renamed to: $nameB !"
+fi
+
 echo "	Last thing..."
 echo "	Cleaning up..."
 sudo apt-get -f install &&
